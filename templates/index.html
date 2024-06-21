@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Facebook Scraper</h1>
+        <form action="{{ url_for('result') }}" method="POST">
+            <label for="type">Type:</label>
+            <select name="type" id="type">
+                <option value="group">Group</option>
+                <option value="page">Page</option>
+            </select>
+            <label for="fb_id">Facebook ID:</label>
+            <input type="text" id="fb_id" name="fb_id" required>
+            <label for="limit">Number of IDs to fetch:</label>
+            <input type="number" id="limit" name="limit" required>
+            <button type="submit">Scrape</button>
+        </form>
+    </div>
+</body>
+</html>
